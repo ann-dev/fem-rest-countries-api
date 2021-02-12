@@ -1,10 +1,16 @@
 import React from 'react';
-import Home from 'views/Home';
+import { Route, Switch } from 'react-router-dom';
+
+import Header from 'components/shared/Header';
+import Home from 'pages/Home';
 
 function App() {
   return (
     <>
-      <Home />
+      <Header />
+      <Switch>
+        <Route path="/" component={Home} />
+      </Switch>
     </>
   );
 }
