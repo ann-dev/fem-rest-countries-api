@@ -21,7 +21,7 @@ const Home = () => {
     <>
       <DefaultLayout>
         <Navigation />
-        <div className="mt-8 grid gap-y-10 lg:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-8 md:-mt-2 grid gap-y-10 xl:gap-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {listCards}
         </div>
       </DefaultLayout>
