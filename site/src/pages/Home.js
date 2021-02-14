@@ -6,11 +6,20 @@ import Navigation from 'components/homepage/Navigation';
 import Card from 'components/common/Card';
 
 function Home() {
+  // TODO: refactor state
+  // maybe change state to [state, setState] = useState({ isLoading: false, countries: []})?
+  // const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [countries, setCountries] = useState([]);
 
+  //TODO: pagination (2 on mobile, 6 on bigger), make cards smaller on mobile
+
+  //TODO: separate hooks in hooks folder
+
   useEffect(() => {
     setIsLoading(true);
+    //TODO: split API URL to params
+    //TODO: add error messages
     const API_URL =
       'https://restcountries.eu/rest/v2/all?fields=name;population;capital;flag;region;alpha2Code;';
     axios
@@ -23,6 +32,7 @@ function Home() {
       .catch((err) => console.log('Error:', err));
   }, []);
 
+  //TODO: export to another component
   const listCards = countries.map((item) => (
     <Card
       key={item.alpha2Code}
@@ -34,6 +44,7 @@ function Home() {
     />
   ));
 
+  //TODO: add loader on loading items
   return (
     <>
       <DefaultLayout>
