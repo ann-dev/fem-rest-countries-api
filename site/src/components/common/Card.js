@@ -2,20 +2,31 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Card = ({ flagSrc, countryName, population, region, capital }) => (
-  <div className="bg-white shadow rounded-md mx-auto h-auto w-64 overflow-hidden">
-    <div className="h-40 w-full bg-cover overflow-hidden">
+  <div className="bg-white transition duration-300 shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden">
+    <div className="h-40">
       <img
-        className="w-full"
+        className="h-full w-full object-cover"
         src={flagSrc}
-        alt="German flag"
+        alt=""
+        role="presentation"
         style={{ minHeight: 160 }}
       />
     </div>
     <div className="h-44 px-5 pt-6">
-      <h2 className="text-lg font-extrabold"> {countryName}</h2>
+      <h2
+        className={
+          countryName.length > 25
+            ? 'text-sm font-bold'
+            : 'text-lg font-extrabold'
+        }
+      >
+        {' '}
+        {countryName}
+      </h2>
       <ul className="mt-3">
         <li className="mt-1 text-sm">
-          <span className="font-semibold">Population:</span> {population}
+          <span className="font-semibold">Population:</span>{' '}
+          {population.toLocaleString('en-US')}
         </li>
         <li className="mt-1 text-sm">
           <span className="font-semibold">Region:</span> {region}
@@ -29,7 +40,7 @@ const Card = ({ flagSrc, countryName, population, region, capital }) => (
 );
 
 Card.defaultProps = {
-  flacSrc: 'https://picsum.photos/300/200',
+  flagSrc: 'https://picsum.photos/300/200',
   countryName: 'Unknown Country',
   population: 1,
   region: '',
