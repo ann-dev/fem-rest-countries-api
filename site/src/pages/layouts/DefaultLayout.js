@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const DefaultLayout = ({ children }) => (
   <>
-    <main className="min-h-screen h-auto z-0 bg-gray-100 px-4 pb-16">
+    <main className="min-h-screen h-auto z-0 bg-gray-100 px-4">
       <div className="container mx-auto">{children}</div>
     </main>
   </>
