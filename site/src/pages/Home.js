@@ -9,6 +9,7 @@ import CardGrid from 'components/homepage/CardGrid';
 function Home() {
   const [countries, setCountries] = useState([]);
   const [hasMore, setHasMore] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   // TODO: add errors
   const [error, setError] = useState('');
   const [count, setCount] = useState({
@@ -32,6 +33,7 @@ function Home() {
         setHasMore(true);
         setCurrent(countries.data.slice(0, 8));
         setCount({ prev: 0, next: 8 });
+        setIsLoading(false);
       });
   }, []);
 
@@ -49,6 +51,7 @@ function Home() {
       prev: prevState.prev + 8,
       next: prevState.next + 8,
     }));
+    setIsLoading(false);
   };
 
   return (
@@ -60,6 +63,7 @@ function Home() {
           hasMore={hasMore}
           filteredData={currentData}
           onLoad={loadMoreCards}
+          loadingState={isLoading}
         />
       </DefaultLayout>
     </>
