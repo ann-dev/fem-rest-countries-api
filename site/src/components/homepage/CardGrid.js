@@ -13,7 +13,7 @@ const override = {
 
 const CardGrid = ({ hasMore, filteredData, onLoad }) => (
   <InfiniteScroll
-    className="pb-16 mt-8 md:-mt-2 grid gap-y-10 xl:gap-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    className="pb-16 pt-12 grid gap-y-10 xl:gap-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
     dataLength={filteredData.length}
     next={onLoad}
     hasMore={hasMore}

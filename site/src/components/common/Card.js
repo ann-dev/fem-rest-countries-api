@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Card = ({ flagSrc, countryName, population, region, capital }) => (
-  <div className="bg-white transition duration-300 shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden">
+  <div className="bg-white transition duration-300 animate-fade-in shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden">
     <div className="h-40">
       <img
         className="h-full w-full object-cover"
@@ -29,10 +29,12 @@ const Card = ({ flagSrc, countryName, population, region, capital }) => (
           {population.toLocaleString('en-US')}
         </li>
         <li className="mt-1 text-sm">
-          <span className="font-semibold">Region:</span> {region}
+          <span className="font-semibold">Region:</span>{' '}
+          {region ? region : 'None'}
         </li>
         <li className="mt-1 text-sm">
-          <span className="font-semibold">Capital:</span> {capital}
+          <span className="font-semibold">Capital:</span>{' '}
+          {capital ? capital : 'None'}
         </li>
       </ul>
     </div>
@@ -43,8 +45,8 @@ Card.defaultProps = {
   flagSrc: 'https://picsum.photos/300/200',
   countryName: 'Unknown Country',
   population: 1,
-  region: '',
-  capital: '',
+  region: 'None',
+  capital: 'None',
 };
 
 Card.propTypes = {
