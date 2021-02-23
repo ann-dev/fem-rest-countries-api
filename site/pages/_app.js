@@ -5,7 +5,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Header />
-      <Component {...pageProps} />
+      <main className="container mx-auto px-4 xl:px-0.5">
+        <Component {...pageProps} />
+      </main>
     </>
   );
 }
