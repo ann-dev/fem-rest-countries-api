@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Card = ({ flagSrc, countryName, population, region, capital }) => (
-  <div className="bg-white transition duration-300 animate-fade-in shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden">
+  <div className="card__wrapper">
     <div className="h-40">
       <img
         className="h-full w-full object-cover"

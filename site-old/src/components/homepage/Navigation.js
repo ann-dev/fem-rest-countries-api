@@ -1,8 +1,19 @@
 import React from 'react';
+
 import Input from 'components/common/Input';
+import Select from 'components/common/Select';
+
+// const filterOptions = [
+//   'Filter by Region',
+//   'Africa',
+//   'America',
+//   'Asia',
+//   'Europe',
+//   'Oceania',
+// ];
 
 const Navigation = () => (
-  <nav className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 gap-y-10 pt-6 lg:pt-12 h-30">
+  <nav className="navigation__wrapper">
     <div className="col-span-2 lg:col-span-3 xl:col-span-2">
       <Input />
     </div>
@@ -11,7 +22,7 @@ const Navigation = () => (
       <Input />
     </div>
     <div className="xl:col-span-1">
-      <Input />
+      <Select />
     </div>
   </nav>
 );

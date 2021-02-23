@@ -5,23 +5,20 @@ import DefaultLayout from 'pages/layouts/DefaultLayout';
 import Navigation from 'components/homepage/Navigation';
 import CardGrid from 'components/homepage/CardGrid';
 
-//TODO: add loader on loading items
 function Home() {
   const [countries, setCountries] = useState([]);
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(true);
-  // TODO: add errors
   const [error, setError] = useState('');
   const [count, setCount] = useState({
     prev: 0,
-    next: 8,
+    next: 12,
   });
   const [currentData, setCurrent] = useState(
     countries.slice(count.prev, count.next)
   );
 
   //TODO: add error messages
-  // possible separation of the API call from component?
   useEffect(() => {
     axios
       .get(
@@ -31,8 +28,8 @@ function Home() {
       .then((countries) => {
         setCountries(countries.data);
         setHasMore(true);
-        setCurrent(countries.data.slice(0, 8));
-        setCount({ prev: 0, next: 8 });
+        setCurrent(countries.data.slice(0, 12));
+        setCount({ prev: 0, next: 12 });
         setIsLoading(false);
       });
   }, []);
@@ -44,12 +41,12 @@ function Home() {
     }
     setTimeout(() => {
       setCurrent(
-        currentData.concat(countries.slice(count.prev + 8, count.next + 8))
+        currentData.concat(countries.slice(count.prev + 12, count.next + 12))
       );
     }, 1500);
     setCount((prevState) => ({
-      prev: prevState.prev + 8,
-      next: prevState.next + 8,
+      prev: prevState.prev + 12,
+      next: prevState.next + 12,
     }));
     setIsLoading(false);
   };

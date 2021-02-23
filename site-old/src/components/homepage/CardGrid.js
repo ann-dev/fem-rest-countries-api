@@ -13,25 +13,26 @@ const override = {
 
 const CardGrid = ({ hasMore, filteredData, onLoad }) => (
   <InfiniteScroll
-    className="pb-16 pt-12 grid gap-y-10 xl:gap-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
     dataLength={filteredData.length}
     next={onLoad}
     hasMore={hasMore}
     loader={<ScaleLoader color="#9CA3AF" css={override} size={150} />}
   >
-    {filteredData &&
-      filteredData.map((country, index) => {
-        return (
-          <Card
-            key={index}
-            flagSrc={country.flag}
-            countryName={country.name}
-            population={country.population}
-            region={country.region}
-            capital={country.capital}
-          />
-        );
-      })}
+    <div className="card-grid__wrapper">
+      {filteredData &&
+        filteredData.map((country, index) => {
+          return (
+            <Card
+              key={index}
+              flagSrc={country.flag}
+              countryName={country.name}
+              population={country.population}
+              region={country.region}
+              capital={country.capital}
+            />
+          );
+        })}
+    </div>
   </InfiniteScroll>
 );
 
