@@ -1,9 +1,15 @@
-// import Card from '../components/Home/CardGrid/Card';
+import InfiniteScroll from 'react-infinite-scroll-component';
 import Card from './Card';
 
-const CardGrid = ({ data }) => {
+const CardGrid = ({ data, hasMore, onLoad }) => {
   return (
-    <div className="card-grid__wrapper">
+    <InfiniteScroll
+      className="card-grid__wrapper"
+      dataLength={data.length}
+      next={onLoad}
+      hasMore={hasMore}
+      loader={<h1>Loading...</h1>}
+    >
       {data.map((item, index) => (
         <Card
           key={index}
@@ -14,7 +20,7 @@ const CardGrid = ({ data }) => {
           capital={item.capital}
         />
       ))}
-    </div>
+    </InfiniteScroll>
   );
 };
 

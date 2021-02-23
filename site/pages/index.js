@@ -1,16 +1,32 @@
 import Head from 'next/head';
 import axios from 'axios';
-// import { useState } from 'react';
+import { useState } from 'react';
 
 import CardGrid from '../components/Home/CardGrid';
 
 const Home = ({ countries, error }) => {
-  // const [modifiedData, setModifiedData] = useState(countries.slice(0, 12));
-  // const [dataCount, setDataCount] = useState({
-  //   first: 0,
-  //   last: 12
-  // });
-  // const [errorCountries, setErrorCountries] = useState(null);
+  const [modifiedData, setModifiedData] = useState(countries.slice(0, 12));
+  const [hasMore, setHasMore] = useState(true);
+  const [dataCount, setDataCount] = useState({
+    first: 0,
+    last: 12
+  });
+
+  const loadMoreCards = () => {
+    if (modifiedData.length === countries.length) {
+      setHasMore(false);
+      return;
+    }
+    setTimeout(() => {
+      setModifiedData(
+        modifiedData.concat(countries.slice(dataCount.first + 12, dataCount.last + 12))
+      );
+    }, 1500);
+    setDataCount((prevState) => ({
+      first: prevState.first + 12,
+      last: prevState.last + 12
+    }));
+  };
 
   if (error) {
     return <div>An error occured: {error.message}</div>;
@@ -22,7 +38,7 @@ const Home = ({ countries, error }) => {
         <title>Frontend Mentor | REST Countries</title>
       </Head>
 
-      <CardGrid data={countries}/>
+      <CardGrid data={modifiedData} onLoad={loadMoreCards} hasMore={hasMore} />
     </>
   );
 };

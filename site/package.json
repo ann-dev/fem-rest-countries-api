@@ -12,7 +12,8 @@
     "axios": "^0.21.1",
     "next": "10.0.7",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-infinite-scroll-component": "^6.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.4",
