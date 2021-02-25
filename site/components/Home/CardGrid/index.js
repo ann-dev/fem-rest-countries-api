@@ -1,22 +1,13 @@
-import InfiniteScroll from 'react-infinite-scroll-component';
 import Link from 'next/link';
-
 import Card from './Card';
 
-const CardGrid = ({ data, hasMore, onLoad }) => {
+const CardGrid = ({ data }) => {
   return (
-    <InfiniteScroll
-      className="card-grid__wrapper"
-      dataLength={data.length}
-      next={onLoad}
-      hasMore={hasMore}
-      loader={<h1>Loading...</h1>}
-    >
+    <div className="card-grid__wrapper">
       {data.map((item, index) => (
-        <Link as={`/${item.name}`} href="/[name]">
+        <Link as={`/${item.name}`} href="/[name]" key={index}>
           <a>
             <Card
-              key={index}
               flagSrc={item.flag}
               countryName={item.name}
               population={item.population}
@@ -26,7 +17,7 @@ const CardGrid = ({ data, hasMore, onLoad }) => {
           </a>
         </Link>
       ))}
-    </InfiniteScroll>
+    </div>
   );
 };
 

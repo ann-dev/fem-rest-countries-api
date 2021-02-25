@@ -41,7 +41,7 @@ const Card = ({ flagSrc, countryName, population, region, capital }) => (
 );
 
 Card.defaultProps = {
-  flagSrc: 'https://picsum.photos/300/200',
+  flagSrc: 'https://via.placeholder.com/600x400',
   countryName: 'Unknown Country',
   population: 1,
   region: 'None',

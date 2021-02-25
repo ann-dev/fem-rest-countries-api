@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useFetch = (endpointUrl) => {
+export const useFetch = (endpointUrl) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,5 +19,3 @@ const useFetch = (endpointUrl) => {
 
   return { data, isLoading };
 };
-
-export default useFetch;

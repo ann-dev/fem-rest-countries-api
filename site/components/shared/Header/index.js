@@ -2,7 +2,7 @@ import Link from 'next/link';
 import ThemeSwitcher from './ThemeSwitcher';
 
 const Header = () => (
-  <header className="z-10 relative shadow">
+  <header className="z-10 relative shadow bg-white">
     <div className="header__container">
       <Link href="/">
         <a>
