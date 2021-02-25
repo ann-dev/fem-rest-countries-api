@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useFetch } from '../hooks/useFetch';
 import { API_URL } from '../constants/index';
 
@@ -18,13 +19,17 @@ const TagList = ({ title, tagData, isLoading }) => {
       <span className="inline-block font-semibold mr-3">{title}</span>
       {tagData?.length > 0 ? (
         tagData?.map((index) => (
-          <div className="bg-white inline-block shadow text-center w-28 h-6 mr-4 mb-4">
-            <span className="text-sm">
-              {alphaCodes
-                .filter((code) => code.alpha3Code === index)
-                .map((item) => item.name)}
-            </span>
-          </div>
+          <>
+            {alphaCodes
+              .filter((code) => code.alpha3Code === index)
+              .map((item) => (
+                <Link href={`/${item.name}`}>
+                  <div className="cursor-pointer bg-white inline-block shadow text-center px-3 py-1 mr-4 mb-4">
+                    <span className="text-sm">{item.name}</span>
+                  </div>
+                </Link>
+              ))}
+          </>
         ))
       ) : (
         <span className="-ml-2">None</span>
