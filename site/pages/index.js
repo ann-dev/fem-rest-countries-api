@@ -1,10 +1,11 @@
 import Head from 'next/head';
 import axios from 'axios';
 
-import CardGrid from '../components/Home/CardGrid';
+import { API_URL } from '../constants';
+import Searchbar from '../components/_home/Searchbar';
+import CardGrid from '../components/_home/CardGrid';
 
 const Home = ({ countries, error }) => {
-
   if (error) {
     return <div>An error occured: ${error.code}</div>;
   }
@@ -15,7 +16,12 @@ const Home = ({ countries, error }) => {
         <title>Frontend Mentor | REST Countries</title>
       </Head>
 
-      <CardGrid data={countries} />
+      <div className="mt-14 xl:px-5">
+        <div className="-mt-2 -ml-1 2xl:px-8">
+          <Searchbar />
+        </div>
+        <CardGrid data={countries} />
+      </div>
     </>
   );
 };
@@ -23,7 +29,7 @@ const Home = ({ countries, error }) => {
 Home.getInitialProps = async (ctx) => {
   try {
     const response = await axios.get(
-      'https://restcountries.eu/rest/v2/all?fields=name;population;capital;flag;region;'
+      `${API_URL}all?fields=name;population;capital;flag;region;`
     );
     const countries = response.data;
     return { countries };

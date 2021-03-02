@@ -36,6 +36,9 @@ a {
   .navigation__wrapper {
     @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 gap-y-10 pt-6 lg:pt-12 h-28;
   }
+  .tag__wrapper {
+    @apply cursor-pointer bg-white inline-block transition duration-300 shadow hover:shadow-md text-center rounded-sm px-3 py-1 mr-4 mb-4;
+  }
   .toggle-switch__wrapper {
     @apply relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11;
   }

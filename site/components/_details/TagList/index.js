@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { useFetch } from '../hooks/useFetch';
-import { API_URL } from '../constants/index';
+import { useFetch } from '../../../hooks/useFetch';
+import { API_URL } from '../../../constants';
 
 const TagList = ({ title, tagData, isLoading }) => {
   const fetchAlphaCodes = () => {
@@ -23,8 +23,8 @@ const TagList = ({ title, tagData, isLoading }) => {
             {alphaCodes
               .filter((code) => code.alpha3Code === index)
               .map((item) => (
-                <Link href={`/${item.name}`}>
-                  <div className="cursor-pointer bg-white inline-block shadow text-center px-3 py-1 mr-4 mb-4">
+                <Link key={index} href={`/${item.name}`}>
+                  <div className="tag__wrapper">
                     <span className="text-sm">{item.name}</span>
                   </div>
                 </Link>
