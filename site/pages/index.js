@@ -1,9 +1,8 @@
 import Head from 'next/head';
-import axios from 'axios';
 
-import { API_URL } from '../constants';
-import Searchbar from '../components/_home/Searchbar';
-import CardGrid from '../components/_home/CardGrid';
+import { API_URL } from 'constants/index';
+import Searchbar from 'components/_home/Searchbar';
+import CardGrid from 'components/_home/CardGrid';
 
 const Home = ({ countries, error }) => {
   if (error) {
@@ -28,10 +27,10 @@ const Home = ({ countries, error }) => {
 
 Home.getInitialProps = async (ctx) => {
   try {
-    const response = await axios.get(
+    const response = await fetch(
       `${API_URL}all?fields=name;population;capital;flag;region;`
     );
-    const countries = response.data;
+    const countries = await response.json();
     return { countries };
   } catch (error) {
     return { error };

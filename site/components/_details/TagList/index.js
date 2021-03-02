@@ -1,6 +1,6 @@
 import Link from 'next/link';
-import { useFetch } from '../../../hooks/useFetch';
-import { API_URL } from '../../../constants';
+import { useFetch } from 'hooks/useFetch';
+import { API_URL } from 'constants/index';
 
 const TagList = ({ title, tagData, isLoading }) => {
   const fetchAlphaCodes = () => {
@@ -16,7 +16,7 @@ const TagList = ({ title, tagData, isLoading }) => {
     <p>Loading...</p>
   ) : (
     <div>
-      <span className="inline-block font-semibold mr-3">{title}</span>
+      <span className="block lg:inline-block font-semibold text-lg mb-4 lg:mb-0 mr-3">{title}</span>
       {tagData?.length > 0 ? (
         tagData?.map((index) => (
           <>
