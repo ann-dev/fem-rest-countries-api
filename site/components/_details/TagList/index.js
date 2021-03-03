@@ -23,7 +23,7 @@ const TagList = ({ title, tagData, isLoading }) => {
             {alphaCodes
               .filter((code) => code.alpha3Code === index)
               .map((item) => (
-                <Link key={index} href={`/${item.name}`}>
+                <Link key={`${index}`} href={`/${item.name}`}>
                   <div className="tag__wrapper">
                     <span className="text-sm">{item.name}</span>
                   </div>

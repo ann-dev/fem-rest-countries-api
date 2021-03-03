@@ -19,7 +19,7 @@ function ThemeSwitcher() {
         checked={switchValue}
         onChange={setSwitchValue}
         className={`${
-          switchValue ? 'bg-green-500' : 'bg-gray-200'
+          switchValue ? 'bg-blue-600' : 'bg-gray-200'
         } toggle-switch__wrapper focus:outline-none focus:shadow-outline`}
       >
         {({ checked }) => (
