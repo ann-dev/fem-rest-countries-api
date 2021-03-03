@@ -15,8 +15,8 @@ const Home = ({ countries, error }) => {
         <title>Frontend Mentor | REST Countries</title>
       </Head>
 
-      <div className="mt-14 xl:px-5">
-        <div className="-mt-2 -ml-1 2xl:px-8">
+      <div className="mt-8 md:mt-14 md:px-2 xl:px-5">
+        <div className="-mt-2 lg:-ml-1 md:px-12 lg:px-10 xl:px-0 2xl:px-8">
           <Searchbar />
         </div>
         <CardGrid data={countries} />
