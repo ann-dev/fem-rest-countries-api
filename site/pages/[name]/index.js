@@ -5,6 +5,7 @@ import Head from 'next/head';
 import { API_URL } from 'constants/index';
 import TagList from 'components/_details/TagList';
 import Button from 'components/common/Button';
+import Spinner from 'components/common/Spinner';
 
 const CountryDetails = () => {
   const router = useRouter();
@@ -14,7 +15,7 @@ const CountryDetails = () => {
   const { data, isLoading } = useFetch(endpoint);
 
   return isLoading ? (
-    <p>Loading...</p>
+    <Spinner />
   ) : (
     <>
       <Head>
@@ -23,7 +24,7 @@ const CountryDetails = () => {
         </title>
       </Head>
 
-      <div className="mt-10 mb-10 mt-10 px-3 lg:mt-20">
+      <div className="mt-10 mb-10 mt-10 px-3 2xl:pl-12 lg:mt-20">
         <Button text="Back" className="px-8" buttonLink="/">
           <img
             src="/icons/arrow-back-outline.svg"
@@ -33,19 +34,19 @@ const CountryDetails = () => {
         <div className="flex flex-col lg:flex-row mt-16 lg:mt-24">
           <div
             className="mr-16 w-full overflow-hidden shadow-lg transition duration-300 animate-fade-in"
-            style={{ minWidth: `calc((100% / 2) - 80px)`, maxHeight: 400 }}
+            style={{ minWidth: `calc((100% / 2) - 80px)`, maxHeight: 500 }}
           >
             <img
               className="object-cover h-full w-full"
-              src={data[0]?.flag || 'https://picsum.photos/600/500'}
+              src={data[0]?.flag || ''}
               alt="flag"
             />
           </div>
-          <div className="lg:ml-14 mt-12 w-full transition duration-300 animate-fade-in">
+          <div className="xl:ml-14 mt-12 w-full transition duration-300 animate-fade-in">
             <h1 className="font-extrabold text-2xl lg:text-4xl">
               {data[0]?.name || 'Unknown'}
             </h1>
-            <div className="flex flex-col lg:flex-row mt-8 lg:mr-10 mb-8 lg:mb-14">
+            <div className="flex flex-col xl:flex-row mt-8 xl:mr-10 mb-8 lg:mb-14">
               <div className="mb-10 lg:mb-0 mr-20">
                 <p className="mb-3 lg:mb-2">
                   <span className="font-semibold">Native name:</span>{' '}

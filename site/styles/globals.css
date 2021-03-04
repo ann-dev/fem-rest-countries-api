@@ -31,7 +31,7 @@ a {
     @apply bg-white transition duration-300 animate-fade-in shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden;
   }
   .header__container {
-    @apply container mx-auto py-8 lg:py-6 pb-7 flex flex-row flex-1 justify-between;
+    @apply container mx-auto py-8 lg:py-6 px-6 xl:px-5 2xl:px-12 lg:px-12 pb-7 flex flex-row flex-1 justify-between;
   }
   .input__wrapper {
     @apply bg-white shadow-md rounded text-xs lg:text-sm px-8 py-4 lg:pt-5;

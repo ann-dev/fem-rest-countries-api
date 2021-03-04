@@ -3,7 +3,7 @@ import ThemeSwitcher from './ThemeSwitcher';
 
 const Header = () => (
   <header className="relative shadow bg-white">
-    <div className="header__container lg:px-12 md:px-6 xl:px-5 2xl:px-12">
+    <div className="header__container">
       <Link href="/">
         <a>
           <h1 className="text-sm md:text-2xl font-extrabold">
