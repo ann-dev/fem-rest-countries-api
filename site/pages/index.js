@@ -28,13 +28,17 @@ const Home = ({ countries, error }) => {
       </Head>
 
       <div className="mt-8 md:mt-14 md:px-2 xl:px-5">
-        <div className="flex flex-row justify-between -mt-2 md:px-12 lg:px-10 xl:px-0 2xl:px-8">
-          <Searchbar />
-          <Select
-            regionData={regionData}
-            value={selectedRegion}
-            onChange={setSelectedRegion}
-          />
+        <div className="card-filters__wrapper">
+          <div className="w-full md:w-7/12 lg:w-3/5 xl:w-2/5">
+            <Searchbar />
+          </div>
+          <div className="mt-10 md:mt-0 w-1/2 md:w-1/3 xl:w-2/12">
+            <Select
+              regionData={regionData}
+              value={selectedRegion}
+              onChange={setSelectedRegion}
+            />
+          </div>
         </div>
         <CardGrid data={countries} currentRegion={selectedRegion} />
       </div>
