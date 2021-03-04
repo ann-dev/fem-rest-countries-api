@@ -1,0 +1,54 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  font-family: Nunito Sans, sans-serif;
+}
+
+body {
+  background-color: rgb(249, 250, 251);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@layer components {
+  .button__wrapper {
+    @apply bg-white shadow-md hover:shadow-lg transition duration-300 animate-fade-in py-2 rounded-md flex items-center;
+  }
+  .card-grid__wrapper {
+    @apply pb-16 pt-12 grid gap-y-10 xl:gap-20 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
+  }
+  .card__wrapper {
+    @apply bg-white transition duration-300 animate-fade-in shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden;
+  }
+  .header__container {
+    @apply container mx-auto py-8 lg:py-6 px-6 xl:px-5 2xl:px-12 lg:px-12 pb-7 flex flex-row flex-1 justify-between;
+  }
+  .input__wrapper {
+    @apply bg-white shadow-md rounded text-xs lg:text-sm px-8 py-4 lg:pt-5;
+  }
+  .navigation__wrapper {
+    @apply grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 gap-y-10 pt-6 lg:pt-12 h-28;
+  }
+  .searchbar__wrapper {
+    @apply bg-search-icon bg-icon-small bg-left bg-no-repeat bg-left-center shadow-md rounded-md px-8 pl-16 py-4 text-sm w-full md:w-5/12 xl:w-1/3;
+  }
+  .tag__wrapper {
+    @apply cursor-pointer bg-white inline-block transition duration-300 shadow hover:shadow-md text-center rounded-sm px-3 py-1 mr-4 mb-4;
+  }
+  .toggle-switch__wrapper {
+    @apply relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11;
+  }
+  .toggle-switch__button {
+    @apply inline-block w-5 h-5 transition duration-200 ease-in-out transform bg-white rounded-full;
+  }
+}
