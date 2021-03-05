@@ -42,6 +42,9 @@ a {
   .listbox__wrapper {
     @apply cursor-pointer relative w-full rounded-md shadow-md bg-white pl-6 py-4 text-left transition ease-in-out duration-150 sm:text-sm sm:leading-5;
   }
+  .listbox-option__wrapper {
+    @apply max-h-60 rounded-md py-1 text-sm leading-6 overflow-auto focus:outline-none sm:leading-5;
+  }
   .searchbar__wrapper {
     @apply bg-search-icon bg-icon-small bg-left bg-no-repeat bg-left-center shadow-md rounded-md w-full px-8 pl-16 py-4 text-sm;
   }

@@ -3,6 +3,7 @@ import { Switch } from '@headlessui/react';
 
 function ThemeSwitcher() {
   const [switchValue, setSwitchValue] = useState(false);
+  const onSwitch = (value) => setSwitchValue(value);
 
   return (
     <Switch.Group as="div" className="flex items-center space-x-4">
@@ -17,7 +18,7 @@ function ThemeSwitcher() {
       <Switch
         as="button"
         checked={switchValue}
-        onChange={setSwitchValue}
+        onChange={onSwitch}
         className={`${
           switchValue ? 'bg-blue-600' : 'bg-gray-200'
         } toggle-switch__wrapper focus:outline-none focus:shadow-outline`}

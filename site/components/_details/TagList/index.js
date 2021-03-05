@@ -15,7 +15,7 @@ const TagList = ({ title, tagData, isLoading }) => {
   return isLoading ? (
     <p>Loading...</p>
   ) : (
-    <div>
+    <div className="relative">
       <span className="block lg:inline-block font-semibold text-lg mb-4 lg:mb-0 mr-3">{title}</span>
       {tagData?.length > 0 ? (
         tagData?.map((index) => (
@@ -32,7 +32,7 @@ const TagList = ({ title, tagData, isLoading }) => {
           </>
         ))
       ) : (
-        <span className="-ml-2">None</span>
+        <span className="absolute top-1 left-36">None</span>
       )}
     </div>
   );

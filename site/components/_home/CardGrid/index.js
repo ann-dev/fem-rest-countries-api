@@ -1,40 +1,45 @@
-import Link from 'next/link';
-import Card from './Card';
+import GridWrapper from './GridWrapper';
+import NoResults from 'components/common/NoResults';
 
-const CardGrid = ({ data, currentRegion }) => {
-  return (
-    <div className="card-grid__wrapper">
-      {currentRegion === 'Filter by Region'
-        ? data.map((item, index) => (
-            <Link as={`/${item.name}`} href="/[name]" key={index}>
-              <a>
-                <Card
-                  flagSrc={item.flag}
-                  countryName={item.name}
-                  population={item.population}
-                  region={item.region}
-                  capital={item.capital}
-                />
-              </a>
-            </Link>
-          ))
-        : data
-            .filter((item) => item.region === currentRegion)
-            .map((item, index) => (
-              <Link as={`/${item.name}`} href="/[name]" key={index}>
-                <a>
-                  <Card
-                    flagSrc={item.flag}
-                    countryName={item.name}
-                    population={item.population}
-                    region={item.region}
-                    capital={item.capital}
-                  />
-                </a>
-              </Link>
-            ))}
-    </div>
-  );
+const CardGrid = ({ data, currentRegion, currentSearchData }) => {
+  // helpers
+  const regionData = data.filter((item) => item.region === currentRegion);
+
+  const filterSearchData = (data) =>
+    data.filter(
+      (item) =>
+        item.name.toLowerCase().indexOf(currentSearchData.toLowerCase()) !== -1
+    );
+
+  const renderDataInGrid = (gridData) =>
+    gridData.map((item, index) => <GridWrapper item={item} index={index} />);
+
+  // render
+  if (currentSearchData && currentRegion !== 'Filter by Region') {
+    const filteredRegionSearchData = filterSearchData(regionData);
+
+    return filteredRegionSearchData.length > 0 ? (
+      renderDataInGrid(filteredRegionSearchData)
+    ) : (
+      <NoResults />
+    );
+  }
+
+  if (currentSearchData) {
+    const filteredSearchData = filterSearchData(data);
+
+    return filteredSearchData.length > 0 ? (
+      renderDataInGrid(filterSearchData(data))
+    ) : (
+      <NoResults />
+    );
+  }
+
+  if (currentRegion !== 'Filter by Region') {
+    return renderDataInGrid(regionData);
+  }
+
+  return renderDataInGrid(data);
 };
 
 export default CardGrid;

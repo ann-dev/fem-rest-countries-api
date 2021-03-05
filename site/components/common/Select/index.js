@@ -34,7 +34,7 @@ const Select = ({ regionData, value, onChange }) => (
           >
             <Listbox.Options
               static
-              className="max-h-60 rounded-md py-1 text-sm leading-6 shadow-xs overflow-auto focus:outline-none sm:leading-5"
+              className="listbox-option__wrapper shadow-xs"
             >
               {regionData.map((item) => (
                 <Listbox.Option key={item} value={item}>

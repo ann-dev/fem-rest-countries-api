@@ -1,21 +1,20 @@
 import Head from 'next/head';
 import { useState } from 'react';
 
-import { API_URL } from 'constants/index';
+import { API_URL, FILTER_REGIONS } from 'constants/index';
 import Searchbar from 'components/_home/Searchbar';
 import Select from 'components/common/Select';
 import CardGrid from 'components/_home/CardGrid';
 
 const Home = ({ countries, error }) => {
-  const regionData = [
-    'Filter by Region',
-    'Africa',
-    'Americas',
-    'Asia',
-    'Europe',
-    'Oceania'
-  ];
-  const [selectedRegion, setSelectedRegion] = useState(regionData[0]);
+  const [selectedRegion, setSelectedRegion] = useState(FILTER_REGIONS[0]);
+  const [searchQuery, setSearchQuery] = useState('');
+
+  // helper functions that eliminate passing setState function to child components for setting parent state (bad practice!!!)
+  // emitting events from child component to parent component.
+  // parent component do the sets of state.
+  const onSearchChange = (event) => setSearchQuery(event.target.value);
+  const onValueChanged = (value) => setSelectedRegion(value);
 
   if (error) {
     return <div>An error occured: ${error.code}</div>;
@@ -30,17 +29,23 @@ const Home = ({ countries, error }) => {
       <div className="mt-8 md:mt-14 md:px-2 xl:px-5">
         <div className="card-filters__wrapper">
           <div className="w-full md:w-7/12 lg:w-3/5 xl:w-2/5">
-            <Searchbar />
+            <Searchbar onChange={onSearchChange} />
           </div>
           <div className="mt-10 md:mt-0 w-1/2 md:w-1/3 xl:w-2/12">
             <Select
-              regionData={regionData}
+              regionData={FILTER_REGIONS}
               value={selectedRegion}
-              onChange={setSelectedRegion}
+              onChange={onValueChanged}
             />
           </div>
         </div>
-        <CardGrid data={countries} currentRegion={selectedRegion} />
+        <div className="card-grid__wrapper relative">
+          <CardGrid
+            data={countries}
+            currentRegion={selectedRegion}
+            currentSearchData={searchQuery}
+          />
+        </div>
       </div>
     </>
   );
