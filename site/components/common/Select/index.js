@@ -5,8 +5,8 @@ const Select = ({ regionData, value, onChange }) => (
     {({ open }) => (
       <>
         <div className="relative">
-          <span className="inline-block w-full rounded-md shadow-sm">
-            <Listbox.Button className="listbox__wrapper focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
+          <span className="listbox">
+            <Listbox.Button className="listbox__inner focus:outline-none focus:shadow-outline-blue focus:border-blue-300">
               <span className="block truncate text-sm">{value}</span>
               <span className="absolute inset-y-0 right-0 flex items-center pr-6 pointer-events-none">
                 <svg
@@ -30,18 +30,18 @@ const Select = ({ regionData, value, onChange }) => (
             leave="transition ease-in duration-100"
             leaveFrom="opacity-100"
             leaveTo="opacity-0"
-            className="z-10 absolute mt-1 w-full rounded-md bg-white shadow-lg"
+            className="z-10 absolute mt-1 w-full rounded-md shadow-lg"
           >
             <Listbox.Options
               static
-              className="listbox-option__wrapper shadow-xs"
+              className="listbox-option shadow-xs"
             >
               {regionData.map((item) => (
                 <Listbox.Option key={item} value={item}>
                   {({ selected, active }) => (
                     <div
                       className={`${
-                        active ? 'text-white bg-blue-600' : 'text-gray-900'
+                        active ? 'text-white bg-blue-600 dark:bg-blue-500' : 'text-gray-900 dark:text-white'
                       } cursor-pointer select-none relative py-2 pl-8 pr-4`}
                     >
                       <span

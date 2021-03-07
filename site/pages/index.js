@@ -27,7 +27,7 @@ const Home = ({ countries, error }) => {
       </Head>
 
       <div className="mt-8 md:mt-14 md:px-2 xl:px-5">
-        <div className="card-filters__wrapper">
+        <div className="card-filters">
           <div className="w-full md:w-7/12 lg:w-3/5 xl:w-2/5">
             <Searchbar onChange={onSearchChange} />
           </div>
@@ -39,7 +39,7 @@ const Home = ({ countries, error }) => {
             />
           </div>
         </div>
-        <div className="card-grid__wrapper relative">
+        <div className="card-grid relative">
           <CardGrid
             data={countries}
             currentRegion={selectedRegion}

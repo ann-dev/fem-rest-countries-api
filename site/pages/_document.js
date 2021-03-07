@@ -8,7 +8,7 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html className="dark">
         <Head>
           <link
             href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
@@ -16,7 +16,7 @@ class MyDocument extends Document {
           />
           <link rel="icon" href="/favicon-32x32.png" />
         </Head>
-        <body>
+        <body className="bg-gray-50 dark:bg-dark-700 dark:text-white">
           <Main />
           <NextScript />
         </body>

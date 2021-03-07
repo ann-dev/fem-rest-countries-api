@@ -20,8 +20,8 @@ function ThemeSwitcher() {
         checked={switchValue}
         onChange={onSwitch}
         className={`${
-          switchValue ? 'bg-blue-600' : 'bg-gray-200'
-        } toggle-switch__wrapper focus:outline-none focus:shadow-outline`}
+          switchValue ? 'bg-blue-600 dark:bg-blue-500' : 'bg-gray-200 dark:bg-dark-700'
+        } toggle-switch border-transparent focus:outline-none focus:shadow-outline`}
       >
         {({ checked }) => (
           <span

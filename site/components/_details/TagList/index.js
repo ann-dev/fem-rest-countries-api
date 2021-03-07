@@ -16,7 +16,7 @@ const TagList = ({ title, tagData, isLoading }) => {
     <p>Loading...</p>
   ) : (
     <div className="relative">
-      <span className="block lg:inline-block font-semibold text-lg mb-4 lg:mb-0 mr-3">{title}</span>
+      <span className="taglist">{title}</span>
       {tagData?.length > 0 ? (
         tagData?.map((index) => (
           <>
@@ -24,7 +24,7 @@ const TagList = ({ title, tagData, isLoading }) => {
               .filter((code) => code.alpha3Code === index)
               .map((item) => (
                 <Link key={`${index}`} href={`/${item.name}`}>
-                  <div className="tag__wrapper">
+                  <div className="tag">
                     <span className="text-sm">{item.name}</span>
                   </div>
                 </Link>

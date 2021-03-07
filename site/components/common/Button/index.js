@@ -3,7 +3,7 @@ import Link from 'next/link';
 const Button = ({ className, text, children, buttonLink }) => (
   <Link href={buttonLink}>
     <button
-      className={`button__wrapper ${className}`}
+      className={`button ${className}`}
     >
       {children}
       {text}

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 
 const Card = ({ flagSrc, countryName, population, region, capital }) => (
-  <div className="card__wrapper">
+  <div className="card">
     <div className="h-40">
       <img
         className="h-full w-full object-cover"

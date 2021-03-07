@@ -1,6 +1,6 @@
 const Searchbar = ({ onChange }) => (
   <input
-    className="searchbar__wrapper"
+    className="searchbar"
     type="text"
     placeholder="Search for a country..."
     onChange={onChange}

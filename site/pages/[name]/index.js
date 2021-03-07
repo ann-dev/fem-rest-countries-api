@@ -24,16 +24,16 @@ const CountryDetails = () => {
         </title>
       </Head>
 
-      <div className="mt-10 mb-10 mt-10 px-3 2xl:pl-12 lg:mt-20">
+      <div className="details-page">
         <Button text="Back" className="px-8" buttonLink="/">
           <img
             src="/icons/arrow-back-outline.svg"
             className="inline-block w-5 mr-3"
           />
         </Button>
-        <div className="flex flex-col lg:flex-row mt-16 lg:mt-24">
+        <div className="details__wrapper">
           <div
-            className="mr-16 w-full overflow-hidden shadow-lg transition duration-300 animate-fade-in"
+            className="flag"
             style={{ minWidth: `calc((100% / 2) - 80px)`, maxHeight: 500 }}
           >
             <img
@@ -42,11 +42,11 @@ const CountryDetails = () => {
               alt="flag"
             />
           </div>
-          <div className="xl:ml-14 mt-12 w-full transition duration-300 animate-fade-in">
+          <div className="country-info">
             <h1 className="font-extrabold text-2xl lg:text-4xl">
               {data[0]?.name || 'Unknown'}
             </h1>
-            <div className="flex flex-col xl:flex-row mt-8 xl:mr-10 mb-8 lg:mb-14">
+            <div className="country-info__details">
               <div className="mb-10 lg:mb-0 mr-20">
                 <p className="mb-3 lg:mb-2">
                   <span className="font-semibold">Native name:</span>{' '}

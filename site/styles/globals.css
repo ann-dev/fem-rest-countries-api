@@ -7,10 +7,6 @@ body {
   font-family: Nunito Sans, sans-serif;
 }
 
-body {
-  background-color: rgb(249, 250, 251);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -21,37 +17,64 @@ a {
 }
 
 @layer components {
-  .button__wrapper {
-    @apply bg-white shadow-md hover:shadow-lg transition duration-300 animate-fade-in py-2 rounded-md flex items-center;
+  .button {
+    @apply bg-white dark:bg-dark-600 shadow-md hover:shadow-lg transition duration-300 animate-fade-in py-2 rounded-md flex items-center;
   }
-  .card__wrapper {
-    @apply bg-white transition duration-300 animate-fade-in shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden;
+  .card {
+    @apply bg-white dark:bg-dark-600 transition duration-300 animate-fade-in shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden;
   }
-  .card-grid__wrapper {
+  .card-grid {
     @apply pb-16 pt-12 grid gap-y-10 xl:gap-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
   }
-  .card-filters__wrapper {
+  .card-filters {
     @apply flex flex-col md:flex-row justify-between lg:items-center -mt-2 md:px-12 lg:px-10 xl:px-0 2xl:px-8;
   }
-  .header__container {
+  .country-info {
+    @apply xl:ml-14 mt-12 w-full transition duration-300 animate-fade-in;
+  }
+  .country-info__details {
+    @apply flex flex-col xl:flex-row mt-8 xl:mr-10 mb-8 lg:mb-14;
+  }
+  .details-page {
+    @apply mt-10 mb-10 px-3 2xl:pl-12 lg:mt-20;
+  }
+  .details__wrapper {
+    @apply flex flex-col lg:flex-row mt-16 lg:mt-24;
+  }
+  .flag {
+    @apply mr-16 w-full overflow-hidden shadow-lg transition duration-300 animate-fade-in;
+  }
+  .header {
     @apply container mx-auto py-8 lg:py-6 px-6 xl:px-5 2xl:px-12 lg:px-12 pb-7 flex flex-row flex-1 justify-between;
   }
-  .input__wrapper {
-    @apply bg-white shadow-md rounded text-xs lg:text-sm px-8 py-4 lg:pt-5;
+  .listbox {
+    @apply bg-white dark:bg-dark-600 inline-block w-full rounded-md shadow-sm;
   }
-  .listbox__wrapper {
-    @apply cursor-pointer relative w-full rounded-md shadow-md bg-white pl-6 py-4 text-left transition ease-in-out duration-150 sm:text-sm sm:leading-5;
+  .listbox__inner {
+    @apply cursor-pointer relative w-full rounded-md shadow-md pl-6 py-4 text-left transition ease-in-out duration-150 sm:text-sm sm:leading-5;
   }
-  .listbox-option__wrapper {
-    @apply max-h-60 rounded-md py-1 text-sm leading-6 overflow-auto focus:outline-none sm:leading-5;
+  .listbox-option {
+    @apply max-h-60 bg-white dark:bg-dark-600 rounded-md py-1 text-sm leading-6 overflow-auto focus:outline-none sm:leading-5;
   }
-  .searchbar__wrapper {
-    @apply bg-search-icon bg-icon-small bg-left bg-no-repeat bg-left-center shadow-md rounded-md w-full px-8 pl-16 py-4 text-sm;
+  .noresults {
+    @apply w-full absolute top-16 lg:top-32 text-center;
   }
-  .tag__wrapper {
-    @apply cursor-pointer bg-white inline-block transition duration-300 shadow hover:shadow-md text-center rounded-sm px-3 py-1 mr-4 mb-4;
+  .noresults__message {
+    @apply mt-1 text-sm inline-block w-64;
   }
-  .toggle-switch__wrapper {
+  .noresults__title {
+    @apply mt-8 text-xl font-semibold;
+  }
+  .searchbar {
+    @apply bg-white dark:bg-dark-600 bg-search-icon bg-icon-small bg-left bg-no-repeat bg-left-center shadow-md rounded-md w-full px-8 pl-16 py-4 text-sm;
+  }
+  .tag {
+    @apply cursor-pointer bg-white dark:bg-dark-600 inline-block transition duration-300 shadow hover:shadow-lg text-center rounded-sm px-3 py-1 mr-4 mb-4;
+  }
+  .taglist {
+    @apply block lg:inline-block font-semibold text-lg mb-4 lg:mb-0 mr-3;
+  }
+  .toggle-switch {
     @apply relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11;
   }
   .toggle-switch__button {

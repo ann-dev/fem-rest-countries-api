@@ -1,8 +1,9 @@
 /* eslint-disable */
 module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'class', // or 'media' or 'class'
   theme: {
+    typography: (theme) => ({}),
     screens: {
       sm: '640px',
       md: '768px',
@@ -11,11 +12,16 @@ module.exports = {
       '2xl': '1536px'
     },
     extend: {
+      backgroundColor: (theme) => ({
+        ...theme('colors'),
+        'dark-600': '#2B3743',
+        'dark-700': '#212E37'
+      }),
       backgroundImage: (theme) => ({
         'search-icon': 'url("/icons/search-outline.svg")'
       }),
       backgroundPosition: {
-        'left-center': 'left 30px center',
+        'left-center': 'left 30px center'
       },
       backgroundSize: {
         'icon-small': '18px'
@@ -38,5 +44,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: []
+  plugins: [require('@tailwindcss/typography')]
 };
