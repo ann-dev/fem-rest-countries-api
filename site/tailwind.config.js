@@ -3,7 +3,6 @@ module.exports = {
   purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
-    typography: (theme) => ({}),
     screens: {
       sm: '640px',
       md: '768px',
@@ -44,5 +43,5 @@ module.exports = {
     }
   },
   variants: {},
-  plugins: [require('@tailwindcss/typography')]
+  plugins: []
 };

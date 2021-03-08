@@ -74,10 +74,4 @@ a {
   .taglist {
     @apply block lg:inline-block font-semibold text-lg mb-4 lg:mb-0 mr-3;
   }
-  .toggle-switch {
-    @apply relative inline-flex flex-shrink-0 h-6 transition-colors duration-200 ease-in-out border-2 border-transparent rounded-full cursor-pointer w-11;
-  }
-  .toggle-switch__button {
-    @apply inline-block w-5 h-5 transition duration-200 ease-in-out transform bg-white rounded-full;
-  }
 }
