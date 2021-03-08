@@ -21,7 +21,7 @@ a {
     @apply bg-white dark:bg-dark-600 shadow-md hover:shadow-lg transition duration-300 animate-fade-in py-2 rounded-md flex items-center;
   }
   .card {
-    @apply bg-white dark:bg-dark-600 transition duration-300 animate-fade-in shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden;
+    @apply bg-white dark:bg-dark-600 animate-fade-in transition-shadow shadow hover:shadow-xl cursor-pointer rounded-md mx-auto h-auto w-64 overflow-hidden;
   }
   .card-grid {
     @apply pb-16 pt-12 grid gap-y-10 xl:gap-20 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4;
