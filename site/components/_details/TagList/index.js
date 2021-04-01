@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import Link from 'next/link';
+
 import { useFetch } from 'hooks/useFetch';
 import { API_URL } from 'constants/index';
 
@@ -36,6 +38,12 @@ const TagList = ({ title, tagData, isLoading }) => {
       )}
     </div>
   );
+};
+
+TagList.propTypes = {
+  title: PropTypes.string,
+  tagData: PropTypes.array,
+  isLoading: PropTypes.bool,
 };
 
 export default TagList;

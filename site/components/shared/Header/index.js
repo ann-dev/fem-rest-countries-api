@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useTheme } from 'next-themes';
 import Link from 'next/link';
 

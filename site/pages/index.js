@@ -1,7 +1,6 @@
 import Head from 'next/head';
 import { useState } from 'react';
 
-
 import { API_URL, FILTER_REGIONS } from 'constants/index';
 import Searchbar from 'components/_home/Searchbar';
 import Select from 'components/common/Select';

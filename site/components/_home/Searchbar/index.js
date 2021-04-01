@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 const Searchbar = ({ onChange }) => (
   <input
     className="searchbar"
@@ -6,5 +8,9 @@ const Searchbar = ({ onChange }) => (
     onChange={onChange}
   />
 );
+
+Searchbar.propTypes = {
+  onChange: PropTypes.function
+};
 
 export default Searchbar;

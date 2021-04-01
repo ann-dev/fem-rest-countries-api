@@ -39,10 +39,16 @@ a {
     @apply mt-10 mb-10 px-3 2xl:pl-12 lg:mt-20;
   }
   .details__wrapper {
-    @apply flex flex-col lg:flex-row mt-16 lg:mt-24;
+    @apply flex flex-col lg:flex-row mt-16 lg:mt-24 mb-36;
   }
   .flag {
     @apply mr-16 w-full overflow-hidden shadow-lg transition duration-300 animate-fade-in;
+  }
+  .footer {
+    @apply container mx-auto bg-gray-50 dark:bg-dark-700 text-gray-600 dark:text-white px-6 lg:px-8 py-12;
+  }
+  .footer__content {
+    @apply mx-auto flex flex-col md:flex-row justify-between items-center mt-8 lg:mt-12 border-t-2 border-gray-200 dark:border-gray-600 pt-8;
   }
   .header {
     @apply container mx-auto py-8 lg:py-6 px-6 xl:px-5 2xl:px-12 lg:px-12 pb-7 flex flex-row flex-1 justify-between;

@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import GridWrapper from './GridWrapper';
 import NoResults from 'components/common/NoResults';
 
@@ -40,6 +42,12 @@ const CardGrid = ({ data, currentRegion, currentSearchData }) => {
   }
 
   return renderDataInGrid(data);
+};
+
+CardGrid.propTypes = {
+  data: PropTypes.array,
+  currentRegion: PropTypes.string,
+  currentSearchData: PropTypes.string,
 };
 
 export default CardGrid;
