@@ -43,7 +43,7 @@ const TagList = ({ title, tagData, isLoading }) => {
 TagList.propTypes = {
   title: PropTypes.string,
   tagData: PropTypes.array,
-  isLoading: PropTypes.bool,
+  isLoading: PropTypes.bool
 };
 
 export default TagList;

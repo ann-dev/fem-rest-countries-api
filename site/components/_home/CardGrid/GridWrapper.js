@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Card from './Card';
 
-const GridWrapper = ({item, index}) => {
+const GridWrapper = ({ item, index }) => {
   return (
     <Link as={`/${item.name}`} href="/[name]" key={index}>
       <a>

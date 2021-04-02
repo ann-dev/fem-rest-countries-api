@@ -47,7 +47,7 @@ const CardGrid = ({ data, currentRegion, currentSearchData }) => {
 CardGrid.propTypes = {
   data: PropTypes.array,
   currentRegion: PropTypes.string,
-  currentSearchData: PropTypes.string,
+  currentSearchData: PropTypes.string
 };
 
 export default CardGrid;

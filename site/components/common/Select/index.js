@@ -32,16 +32,15 @@ const Select = ({ regionData, value, onChange }) => (
             leaveTo="opacity-0"
             className="z-10 absolute mt-1 w-full rounded-md shadow-lg"
           >
-            <Listbox.Options
-              static
-              className="listbox-option shadow-xs"
-            >
+            <Listbox.Options static className="listbox-option shadow-xs">
               {regionData.map((item) => (
                 <Listbox.Option key={item} value={item}>
                   {({ selected, active }) => (
                     <div
                       className={`${
-                        active ? 'text-white bg-blue-600 dark:bg-blue-500' : 'text-gray-900 dark:text-white'
+                        active
+                          ? 'text-white bg-blue-600 dark:bg-blue-500'
+                          : 'text-gray-900 dark:text-white'
                       } cursor-pointer select-none relative py-2 pl-8 pr-4`}
                     >
                       <span

@@ -7,7 +7,9 @@ const NoResults = () => (
       role="presentation"
     />
     <h1 className="noresults__title">Sorry, no results found</h1>
-    <span className="noresults__message">Your search did not match any of the countries of this planet</span>
+    <span className="noresults__message">
+      Your search did not match any of the countries of this planet
+    </span>
   </div>
 );
 
