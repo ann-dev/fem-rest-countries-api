@@ -21,7 +21,7 @@ const Header = () => {
   };
 
   return (
-    <header className="relative shadow dark:bg-dark-600">
+    <header className="relative shadow bg-white dark:bg-dark-600">
       <div className="header">
         <Link href="/">
           <a>
