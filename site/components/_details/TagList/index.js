@@ -40,10 +40,14 @@ const TagList = ({ title, tagData, isLoading }) => {
   );
 };
 
+TagList.defaultProps = {
+  title: 'Sample title'
+};
+
 TagList.propTypes = {
   title: PropTypes.string,
-  tagData: PropTypes.array,
-  isLoading: PropTypes.bool
+  tagData: PropTypes.array.isRequired,
+  isLoading: PropTypes.bool.isRequired
 };
 
 export default TagList;

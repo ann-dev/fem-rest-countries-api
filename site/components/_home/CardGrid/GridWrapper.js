@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 import Link from 'next/link';
 import Card from './Card';
 
@@ -15,6 +17,11 @@ const GridWrapper = ({ item, index }) => {
       </a>
     </Link>
   );
+};
+
+GridWrapper.propTypes = {
+  item: PropTypes.object.isRequired,
+  index: PropTypes.number.isRequired
 };
 
 export default GridWrapper;

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 import { API_URL, FILTER_REGIONS } from 'constants/index';
@@ -61,6 +62,11 @@ Home.getInitialProps = async (ctx) => {
   } catch (error) {
     return { error };
   }
+};
+
+Home.propTypes = {
+  countries: PropTypes.array,
+  error: PropTypes.object
 };
 
 export default Home;

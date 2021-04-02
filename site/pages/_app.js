@@ -1,13 +1,14 @@
+import PropTypes from 'prop-types';
 import { ThemeProvider } from 'next-themes';
 
 import 'styles/globals.css';
 import Header from 'components/shared/Header';
 import Footer from 'components/shared/Footer';
 
-function MyApp({ Component, pageProps }) {
+function App({ Component, pageProps }) {
   return (
     <ThemeProvider attribute="class" defaultTheme="system">
-      <div class="flex flex-col h-screen">
+      <div className="flex flex-col h-screen">
         <Header />
         <main className="flex-grow container mx-auto px-4 xl:px-0.5">
           <Component {...pageProps} />
@@ -18,4 +19,9 @@ function MyApp({ Component, pageProps }) {
   );
 }
 
-export default MyApp;
+App.propTypes = {
+  Component: PropTypes.elementType.isRequired,
+  pageProps: PropTypes.object
+};
+
+export default App;

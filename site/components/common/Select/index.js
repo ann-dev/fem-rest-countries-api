@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { Listbox, Transition } from '@headlessui/react';
 
 const Select = ({ regionData, value, onChange }) => (
@@ -81,5 +82,11 @@ const Select = ({ regionData, value, onChange }) => (
     )}
   </Listbox>
 );
+
+Select.propTypes = {
+  regionData: PropTypes.array.isRequired,
+  value: PropTypes.string.isRequired,
+  onChange: PropTypes.func.isRequired
+};
 
 export default Select;

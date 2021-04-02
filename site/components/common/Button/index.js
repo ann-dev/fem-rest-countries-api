@@ -10,6 +10,12 @@ const Button = ({ className, text, children, buttonLink }) => (
   </Link>
 );
 
+Button.defaultProps = {
+  className: 'button',
+  text: 'Sample text',
+  buttonLink: ''
+};
+
 Button.propTypes = {
   className: PropTypes.string,
   text: PropTypes.string,
