@@ -16,7 +16,7 @@
 <h3>Main features:</h3>
 <ul>
     <li>Custom React Hook that uses Fetch API for pulling data</li>
-    <li>Based on Next.js framework and styled components<br /></li>
+    <li>Based on Next.js framework and Tailwind CSS<br /></li>
     <li>Search function that instantly shows results on main page</li>
     <li>Filter countries by region</li>
     <li>Details page for each country</li>
@@ -57,6 +57,7 @@ yarn build
 ## Credits
 
 -   Original design - [Frontend Mentor Team](https://www.frontendmentor.io/)
+-   CSS framework - [Tailwind CSS](https://tailwindcss.com/)
 -   Listbox design & code - [tailwindlabs](https://github.com/tailwindlabs/headlessui)
 -   Loading spinner design & code - [Tobias Ahlin](https://tobiasahlin.com/spinkit/)
 -   Icons - [ionicons](https://ionicons.com/)

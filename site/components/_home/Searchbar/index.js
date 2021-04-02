@@ -6,6 +6,7 @@ const Searchbar = ({ onChange }) => (
     type="text"
     placeholder="Search for a country..."
     onChange={onChange}
+    role="search"
   />
 );
 
