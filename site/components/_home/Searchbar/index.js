@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 const Searchbar = ({ onChange }) => (
   <input
     className="searchbar"
-    type="text"
+    type="search"
     placeholder="Search for a country..."
     onChange={onChange}
     role="search"
+    aria-label="Search"
   />
 );
 
