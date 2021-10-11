@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import Link from 'next/link';
 
 const Button = ({ className, text, children, buttonLink }) => (
-  <Link href={buttonLink}>
+  <Link href={buttonLink} passHref>
     <button className={`button ${className}`}>
       {children}
       {text}

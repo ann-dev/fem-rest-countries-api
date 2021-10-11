@@ -1,22 +1,8 @@
 import PropTypes from 'prop-types';
 import Link from 'next/link';
 
-import { useFetch } from 'hooks/useFetch';
-import { API_URL } from 'constants/index';
-
-const TagList = ({ title, tagData, isLoading }) => {
-  const fetchAlphaCodes = () => {
-    const endpoint = `${API_URL}all?fields=name;alpha3Code;`;
-    const { data } = useFetch(endpoint);
-
-    return data;
-  };
-
-  const alphaCodes = fetchAlphaCodes();
-
-  return isLoading ? (
-    <p>Loading...</p>
-  ) : (
+const TagList = ({ title, tagData }) => {
+  return (
     <div className="relative">
       <span className="taglist">{title}</span>
       {tagData?.length > 0 ? (
@@ -25,7 +11,7 @@ const TagList = ({ title, tagData, isLoading }) => {
             {alphaCodes
               .filter((code) => code.alpha3Code === index)
               .map((item) => (
-                <Link key={`${index}`} href={`/${item.name}`}>
+                <Link key={`${index}`} href={`/${item.name}`} passHref>
                   <div className="tag">
                     <span className="text-sm">{item.name}</span>
                   </div>
@@ -46,8 +32,7 @@ TagList.defaultProps = {
 
 TagList.propTypes = {
   title: PropTypes.string,
-  tagData: PropTypes.array.isRequired,
-  isLoading: PropTypes.bool.isRequired
+  tagData: PropTypes.array.isRequired
 };
 
 export default TagList;

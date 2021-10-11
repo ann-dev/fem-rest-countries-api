@@ -41,28 +41,36 @@ const Home = ({ countries, error }) => {
           </div>
         </div>
         <div className="card-grid relative">
-          <CardGrid
-            data={countries}
-            currentRegion={selectedRegion}
-            currentSearchData={searchQuery}
-          />
+          {!countries && <h1>Failed fetching data :(</h1>}
+          {countries && (
+            <CardGrid
+              data={countries}
+              currentRegion={selectedRegion}
+              currentSearchData={searchQuery}
+            />
+          )}
         </div>
       </div>
     </>
   );
 };
 
-Home.getInitialProps = async (ctx) => {
-  try {
-    const response = await fetch(
-      `${API_URL}all?fields=name;population;capital;flag;region;`
-    );
-    const countries = await response.json();
-    return { countries };
-  } catch (error) {
-    return { error };
+export async function getStaticProps(context) {
+  const response = await fetch(
+    `${API_URL}all?fields=name,flags,population,region,capital,`
+  );
+  const countries = await response.json();
+
+  if (!countries) {
+    return {
+      notFound: true
+    };
   }
-};
+
+  return {
+    props: { countries }
+  };
+}
 
 Home.propTypes = {
   countries: PropTypes.array,

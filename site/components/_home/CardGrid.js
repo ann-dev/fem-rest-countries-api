@@ -5,16 +5,18 @@ import NoResults from 'components/common/NoResults';
 
 const CardGrid = ({ data, currentRegion, currentSearchData }) => {
   // helpers
-  const regionData = data.filter((item) => item.region === currentRegion);
+  const regionData = data?.filter((item) => item.region === currentRegion);
 
   const filterSearchData = (data) =>
-    data.filter(
+    data?.filter(
       (item) =>
-        item.name.toLowerCase().indexOf(currentSearchData.toLowerCase()) !== -1
+        item.name.common
+          .toLowerCase()
+          .indexOf(currentSearchData.toLowerCase()) !== -1
     );
 
   const renderDataInGrid = (gridData) =>
-    gridData.map((item, index) => <GridWrapper item={item} index={index} />);
+    gridData?.map((item) => <GridWrapper item={item} key={item.name.common} />);
 
   // render
   if (currentSearchData && currentRegion !== 'Filter by Region') {

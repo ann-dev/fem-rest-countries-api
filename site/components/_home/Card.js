@@ -53,7 +53,7 @@ Card.propTypes = {
   countryName: PropTypes.string,
   population: PropTypes.number,
   region: PropTypes.string,
-  capital: PropTypes.string
+  capital: PropTypes.array
 };
 
 export default Card;
