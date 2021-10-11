@@ -1,9 +1,8 @@
 import PropTypes from 'prop-types';
-
 import Link from 'next/link';
 import Card from './Card';
 
-const GridWrapper = ({ item }) => {
+const CardWrapper = ({ item }) => {
   return (
     <Link as={`/${item.name.common}`} href="/[name]">
       <a>
@@ -19,8 +18,8 @@ const GridWrapper = ({ item }) => {
   );
 };
 
-GridWrapper.propTypes = {
-  item: PropTypes.object.isRequired,
+CardWrapper.propTypes = {
+  item: PropTypes.object.isRequired
 };
 
-export default GridWrapper;
+export default CardWrapper;

@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
-
-import GridWrapper from './GridWrapper';
+import CardWrapper from './CardWrapper';
 import NoResults from 'components/common/NoResults';
 
 const CardGrid = ({ data, currentRegion, currentSearchData }) => {
@@ -16,7 +15,7 @@ const CardGrid = ({ data, currentRegion, currentSearchData }) => {
     );
 
   const renderDataInGrid = (gridData) =>
-    gridData?.map((item) => <GridWrapper item={item} key={item.name.common} />);
+    gridData?.map((item) => <CardWrapper item={item} key={item.name.common} />);
 
   // render
   if (currentSearchData && currentRegion !== 'Filter by Region') {

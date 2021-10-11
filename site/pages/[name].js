@@ -40,9 +40,11 @@ const CountryDetails = ({ country }) => {
               <div className="mb-10 lg:mb-0 mr-20">
                 <p className="mb-3 lg:mb-2">
                   <span className="font-semibold">Native name:</span>{' '}
-                  {country[0]?.name.nativeName[
-                    Object.keys(country[0]?.name.nativeName)[0]
-                  ].official || 'Unknown'}
+                  {country[0]?.name.nativeName
+                    ? country[0]?.name.nativeName[
+                        Object.keys(country[0]?.name.nativeName)[0]
+                      ].official
+                    : 'Unknown'}
                 </p>
                 <p className="mb-3 lg:mb-2">
                   <span className="font-semibold">Population:</span>{' '}
@@ -64,21 +66,25 @@ const CountryDetails = ({ country }) => {
               <div>
                 <p className="mb-3 lg:mb-2">
                   <span className="font-semibold">Top Level Domains:</span>{' '}
-                  {country[0]?.tld.join(', ') || 'None'}
+                  {country[0]?.tld ? country[0]?.tld.join(', ') : 'None'}
                 </p>
                 <p className="mb-3 lg:mb-2 w-64">
                   <span className="font-semibold">Currencies:</span>{' '}
                   <span>
-                    {Object.entries(country[0]?.currencies)
-                      .map((item) => item[1].name)
-                      .join(', ') || 'None'}
+                    {country[0]?.currencies
+                      ? Object.entries(country[0]?.currencies)
+                          .map((item) => item[1].name)
+                          .join(', ')
+                      : 'None'}
                   </span>
                 </p>
                 <p className="mb-2 w-72">
                   <span className="font-semibold">Languages:</span>{' '}
-                  {Object.entries(country[0].languages)
-                    .map((item) => item[1])
-                    .join(', ') || 'Unknown'}
+                  {country[0]?.languages
+                    ? Object.entries(country[0].languages)
+                        .map((item) => item[1])
+                        .join(', ')
+                    : 'Unknown'}
                 </p>
               </div>
             </div>
