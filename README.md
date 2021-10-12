@@ -10,7 +10,7 @@
 
 ## Description
 
-<p>Responsive page integrated with REST Countries API that pulls and display country data. Solution for <a href="https://www.frontendmentor.io/profile/ann-dev">frontendmentor.io</a> challenge.
+<p>Responsive page integrated with REST Countries API (upgraded to v3) that pulls and display country data. Solution for <a href="https://www.frontendmentor.io/profile/ann-dev">frontendmentor.io</a> challenge.
 </p>
 
 <h3>Main features:</h3>
@@ -20,7 +20,6 @@
     <li>Search function that instantly shows results on main page</li>
     <li>Filter countries by region</li>
     <li>Details page for each country</li>
-    <li>Quick navigation between pages through tags</li>
     <li>Light and dark mode toggle</li>
 </ul>
 
@@ -57,6 +56,7 @@ yarn build
 ## Credits
 
 -   Original design - [Frontend Mentor Team](https://www.frontendmentor.io/)
+-   REST API used - [REST Countries](https://restcountries.com)
 -   CSS framework - [Tailwind CSS](https://tailwindcss.com/)
 -   Listbox design & code - [tailwindlabs](https://github.com/tailwindlabs/headlessui)
 -   Loading spinner design & code - [Tobias Ahlin](https://tobiasahlin.com/spinkit/)
